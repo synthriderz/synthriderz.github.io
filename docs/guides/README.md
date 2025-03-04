@@ -43,6 +43,8 @@ A collection of guides and other resources for the VR game Synth Riders
 
 - Mixed Reality Camera Movement Faker
     - https://docs.google.com/document/d/1FX080SYG8H_gFfFPMJagr7X7RVkQEONyKycKZRmBhRQ/edit?tab=t.0#heading=h.iwwcn9d28mhh
+- General Guide/Links on recording VR with avatars
+    - https://slashlog.org/#/VirtualReality(VR)/recording/
 
 ## Troubleshoting
 

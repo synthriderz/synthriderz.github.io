@@ -14,4 +14,5 @@
 - [Mapping](mapping/)
 - Modeling
     - [Creating Custom Stages](modeling/custom-stages/)
+    - [Custom Avatars](modeling/custom-avatars/)
     - [Custom Textures](modeling/custom-textures/)
