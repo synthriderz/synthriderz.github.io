@@ -2,6 +2,9 @@
 
 Getting started with custom content for Synth Riders
 
+!> **Proceed at your own risk**  
+Please note that Custom Content is provided _as is_ and you install custom content - especially mods - **at your own risk.**
+
 ## PCVR
 
 If you are using SteamVR or the PC version in the Oculus Store, follow the PCVR Guide below:

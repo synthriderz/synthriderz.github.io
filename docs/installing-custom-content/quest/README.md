@@ -3,18 +3,19 @@
 Learn how to install custom songs to your Oculus Quest headset!
 
 !> **Proceed at your own risk**  
-Please note that Custom Songs are provided _as is_ and you install custom content onto your Quest **at your own risk.**
+Please note that Custom Content is provided _as is_ and you install custom content onto your Quest **at your own risk.**
 
-### Installing Custom Content
+### Installing custom songs, playlists and stages
 
 Custom Content can be installed from a desktop computer to your Quest device using any of the following methods:
 
-- [Manual Install](/installing-custom-content/quest/manual/)
-    - Download custom content and manually place it on your Quest device
+- Directly from [synthriderz.com](https://synthriderz.com/beatmaps/downloader) via the `Connect Quest` feature
 - [Synplicity](https://sidequestvr.com/app/38872/synplicity)
     - SideQuest App to manage and install custom content directly on your Quest
 - [NoodleManagerX](https://github.com/tommaier123/NoodleManagerX/releases)
     - Desktop application for installing custom songs
+- [Manual Install](/installing-custom-content/quest/manual/)
+    - Download custom content and manually place it on your Quest device
 
 ### Advanced
 
