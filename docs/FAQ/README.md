@@ -11,7 +11,8 @@ ___
 
 ### Q: Where do I get custom songs?
 
-The best way is to ask in the modding community for guidance: [https://discord.synthriderz.com](https://discord.synthriderz.com)
+- Find custom maps made by the community at https://synthriderz.com/beatmaps
+- To commission custom maps check out the : [Modding Community Discord](https://discord.synthriderz.com)
 
 ___
 
@@ -96,7 +97,7 @@ ___
 
 ### Q: Are there any other avatars?
 
-Best way is to ask in the modding community for guidance: [https://discord.synthriderz.com](https://discord.synthriderz.com)
+Check out [synthriderz.com/models/avatars](https://synthriderz.com/models/avatars) for custom, community-made avatars.   
 In addition, Synth Riders can use most avatars that are in a VRM format. VRM is a file format for handling 3D humanoid avatar data for VR. You can find some ready to download at [https://hub.vroid.com/](https://hub.vroid.com/).  
 Just place these in the Avatars folder under the
 game installation folder.
@@ -122,8 +123,7 @@ ___
 ### Q: How can I do full body tracking?
 
 If you want full body tracking, you will need extra trackers or you can also use solutions such as a Kinect and Driver4vr ([https://www.driver4vr.com/](https://www.driver4vr.com/)), or use LIV with Avatar support. Once you are setup for full body tracking, you can then change the
-type of tracking in
-the avatar menu.
+type of tracking in the avatar menu.
 
 ___
 
