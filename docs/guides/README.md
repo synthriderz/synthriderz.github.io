@@ -38,6 +38,11 @@ A collection of guides and other resources for the VR game Synth Riders
     - https://docs.google.com/spreadsheets/d/1zrfHV0pISaI5wpjNnrCjUtHOxO2QXf1KmS4iPt2glU4/edit?gid=0#gid=0
 - SR Editor commonly used hotkey list
     - https://docs.google.com/spreadsheets/d/1jqiT0VV6oOtjsxt_erSbQC4LjzQXqsU_Fj5MN0ATffI/edit?gid=0#gid=0
+    - Video Guides
+        - Synth Riders Beatmap Editor - Full Setup Tutorial
+            - https://www.youtube.com/watch?v=iGipgpFfiOg
+        - Synth Riders Editor Basics Tutorial
+            - https://www.youtube.com/watch?v=ZQdTKTsWi-c
 
 ## LIV and Recording
 
