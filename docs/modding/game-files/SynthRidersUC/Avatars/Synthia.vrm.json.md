@@ -1,0 +1,3 @@
+# Synthia.vrm.json
+
+TODO

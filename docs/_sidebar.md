@@ -11,6 +11,7 @@
 - [Modding and Tools](modding/released-mods/)
     - [Released Mods&Tools](modding/released-mods/)
     - [Creating Modes](modding/getting-started/)
+    - [Game Files](modding/game-files/)
 - [Mapping](mapping/)
 - Modeling
     - [Creating Custom Stages](modeling/custom-stages/)
