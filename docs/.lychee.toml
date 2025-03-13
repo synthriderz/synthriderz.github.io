@@ -1,0 +1,3 @@
+# Exclude URLs from checking (supports regex)
+#exclude = [
+#]
