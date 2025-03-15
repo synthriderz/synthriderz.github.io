@@ -29,6 +29,7 @@ The current focus is on getting the content up to date - changes to the theme or
 ### preview with docsify
 
 ````shell
-npm i docsify-cli -g
-docsify serve ./docs
+npm install
+npm run serve
 ````
+
