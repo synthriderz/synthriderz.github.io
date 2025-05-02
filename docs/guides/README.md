@@ -53,12 +53,6 @@ A collection of guides and other resources for the VR game Synth Riders
 - Universal Song Overlay
     - https://github.com/steglasaurous/universal-song-overlay
 
-## Troubleshooting
-
-- Quick Troubleshooting Guide - Help for Synth Riders on Quest
-    - https://cdn.discordapp.com/attachments/1284589165668728914/1284978541569773568/helpme.png?ex=67c177c6&is=67c02646&hm=726b5d78421d6c7ad4e9b67124e9e0e9e23c6aa59583b7e7c465581634a5f713&
-    - Source: [Synth Riders Discord](https://discord.gg/synthriders)
-
 ## Guides and FAQs
 
 - Synth Riders Wiki and FAQ @Reddit

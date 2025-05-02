@@ -91,7 +91,7 @@ ___
 
 ### Q: My avatar is.. (too big / too small / isn’t scaling correctly / not matching me)..?
 
-You can repeat the calibration process at any time, by standing still with your arms by your side, looking ahead and then squeezing both triggers.
+You can repeat the calibration process at any time, by standing still with your arms by your side, looking ahead, and then squeezing both triggers.
 
 ___
 
@@ -107,10 +107,9 @@ ___
 ### Q: Can I use my (Beat Saber/VRChat/other) avatar? Can I make my own avatar?
 
 - If it’s not in VRM format, then it will need to be converted. The easiest way to do this is using UniVRM (available here: [https://vrm.dev/en/](https://vrm.dev/en/)) from within Unity. Once you have UniVRM, you can refer to their documentation on what to do
-  next: [https://vrm.dev/en/how\_to\_make\_vrm/](https://vrm.dev/en/how_to_make_vrm/).
+  next: [https://vrm.dev/en/vrm/how_to_make_vrm](https://vrm.dev/en/vrm/how_to_make_vrm).
 - VRChat: See this discord-thread for a quick-start on converting your VRChat Avi to LIV in 2025: [https://discord.com/channels/698682814446123817/698682814446123820/698682814446123823](https://discord.com/channels/546769414226182202/566059797334720532/1341764571710488596)
 - You may also find some useful information on the modding community Discord: [https://discord.synthriderz.com](https://discord.synthriderz.com)(
-- There’s a tutorial on making avatars with VRoid here: [https://www.youtube.com/watch?v=49-zvKGZQdE](https://www.youtube.com/watch?v=49-zvKGZQdE)
 
 ___
 
@@ -190,13 +189,13 @@ Take a look at the Twitch Integration Guide here: [https://bit.ly/srtwitch](http
 ___
 
 `Q: My YouTube / Twitch / Facebook videos containing music from the OST are being flagged for copyright claims, what should I do?`  
-You can find the list of OST music and the various license restrictions here: [http://videopolicy.synthridersvr.com/](http://videopolicy.synthridersvr.com/).  
+You can find the list of OST music and the various license restrictions here: [https://synthridersvr.com/music-licensing](https://synthridersvr.com/music-licensing).  
 The only OST for which you have complete license to use and monetize is the **99 Lives Pack**.
 
 ___
 
 `Q: I’d like to use the Synth Riders logo and assets for my videos, where can I get it?`  
-The Synth Riders team have a presskit with their official assets where you’ll find logos, screenshots and videos for your use located here: [Google Drive](https://drive.google.com/drive/folders/16vfY8vvl63XPB8jT7x0U8qev3hRPoED6)
+The Synth Riders team have a presskit with their official assets where you’ll find logos, screenshots, and videos for your use located here: [https://presskit.synthridersvr.com](https://presskit.synthridersvr.com)
 
 ## YURfit
 
@@ -207,7 +206,7 @@ ___
 
 `Q: How do I sign up for YURfit?`  
 The YUR Watch is enabled by default. You can gaze at the watch (you'll see a white dot showing your gaze point) and the panel will open, prompting you to connect. Gaze at YES on the confirmation panel to receive a connect code. Enter this code
-at [https://yur.watch/](https://yur.watch/) to connect
+at [https://app.yur.fit](https://app.yur.fit) to connect
 the tracker to your YUR account - you’ll have the opportunity to sign in if you’re an existing user already, or to create a new account.
 
 ___
@@ -218,7 +217,7 @@ While you’re playing a song and signed in to YURfit, you’ll see a calorie co
 ___
 
 `Q: I forgot my password for YURfit!`  
-To reset your password, go here: [YURfit Password Reset](https://yurapp-502de.firebaseapp.com/yuraccountlogin.html)
+To reset your password, go here: [https://app.yur.fit](https://app.yur.fit)
 
 ___
 
