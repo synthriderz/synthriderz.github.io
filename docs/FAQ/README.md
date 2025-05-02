@@ -217,7 +217,7 @@ While you’re playing a song and signed in to YURfit, you’ll see a calorie co
 ___
 
 `Q: I forgot my password for YURfit!`  
-To reset your password, go here: [YURfit Password Reset](https://yurapp-502de.firebaseapp.com/yuraccountlogin.html)
+To reset your password, go here: [https://app.yur.fit](https://app.yur.fit)
 
 ___
 
