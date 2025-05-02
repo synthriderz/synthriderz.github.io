@@ -1,0 +1,7 @@
+# Links to ignore when checking
+# https://lychee.cli.rs/recipes/excluding-links/#permanently-excluding-links
+
+# ignore Reddit because they block Requests
+https://www.reddit.com
+# ignore bit.ly to reddit.com
+http://bit.ly/srrhythmguidem
