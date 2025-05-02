@@ -35,11 +35,11 @@ This directory is found at the top level of the Quest filesystem
 
 Within this directory, custom content can be installed to the following locations:
 
-| Content Type     | Folder         | File Type                          |
-|------------------|----------------|------------------------------------|
-| **Custom Songs** | `CustomSongs`  | `.synth`                           |
-| **Stages**       | `CustomStages` | `.stagequest` or `.spinstagequest` |
-| **Playlists**    | `Playlist`     | `.playlist`                        |
+| Content Type     | Folder         | File Type                                         |
+|------------------|----------------|---------------------------------------------------|
+| **Custom Songs** | `CustomSongs`  | `.synth`                                          |
+| **Stages**       | `CustomStages` | PC: `.stage` or `.spinstage` Quest: `.stagedroid` |
+| **Playlists**    | `Playlist`     | `.playlist`                                       |
 
 !> Unzip first!
 If you have downloaded any .zip content from the site, make sure to unzip it first before moving it to the correct locations above

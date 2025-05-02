@@ -35,11 +35,11 @@ Before continuing, make sure you have met each of the following prerequisites:
 6. Move the downloaded content files from the right pane into the correct folder on the left pane.  
    Make sure to install content in the correct subfolder based on the file type:
 
-| Content Type     | Folder         | File Type                          |
-|------------------|----------------|------------------------------------|
-| **Custom Songs** | `CustomSongs`  | `.synth`                           |
-| **Stages**       | `CustomStages` | `.stagequest` or `.spinstagequest` |
-| **Playlists**    | `Playlist`     | `.playlist`                        |
+| Content Type     | Folder         | File Type                                         |
+|------------------|----------------|---------------------------------------------------|
+| **Custom Songs** | `CustomSongs`  | `.synth`                                          |
+| **Stages**       | `CustomStages` | PC: `.stage` or `.spinstage` Quest: `.stagedroid` |
+| **Playlists**    | `Playlist`     | `.playlist`                                       |
 
 !> **Unzip first!**  
 If you have downloaded any `.zip` content from the site, make sure to unzip it first before moving it to the correct locations above.  
