@@ -3,5 +3,5 @@
 
 # ignore Reddit because they block Requests
 https://www.reddit.com
-# ignore bit.ly to reddit.com
-http://bit.ly/srrhythmguidem
+# ignore bit.ly link to reddit.com
+http://bit.ly/srrhythmguidez
