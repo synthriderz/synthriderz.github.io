@@ -206,7 +206,7 @@ ___
 
 `Q: How do I sign up for YURfit?`  
 The YUR Watch is enabled by default. You can gaze at the watch (you'll see a white dot showing your gaze point) and the panel will open, prompting you to connect. Gaze at YES on the confirmation panel to receive a connect code. Enter this code
-at [https://yur.watch/](https://yur.watch/) to connect
+at [https://app.yur.fit](https://app.yur.fit) to connect
 the tracker to your YUR account - you’ll have the opportunity to sign in if you’re an existing user already, or to create a new account.
 
 ___
