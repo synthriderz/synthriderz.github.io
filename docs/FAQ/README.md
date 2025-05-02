@@ -110,7 +110,6 @@ ___
   next: [https://vrm.dev/en/how\_to\_make\_vrm/](https://vrm.dev/en/how_to_make_vrm/).
 - VRChat: See this discord-thread for a quick-start on converting your VRChat Avi to LIV in 2025: [https://discord.com/channels/698682814446123817/698682814446123820/698682814446123823](https://discord.com/channels/546769414226182202/566059797334720532/1341764571710488596)
 - You may also find some useful information on the modding community Discord: [https://discord.synthriderz.com](https://discord.synthriderz.com)(
-- There’s a tutorial on making avatars with VRoid here: [https://www.youtube.com/watch?v=49-zvKGZQdE](https://www.youtube.com/watch?v=49-zvKGZQdE)
 
 ___
 
