@@ -189,7 +189,7 @@ Take a look at the Twitch Integration Guide here: [https://bit.ly/srtwitch](http
 ___
 
 `Q: My YouTube / Twitch / Facebook videos containing music from the OST are being flagged for copyright claims, what should I do?`  
-You can find the list of OST music and the various license restrictions here: [http://videopolicy.synthridersvr.com/](http://videopolicy.synthridersvr.com/).  
+You can find the list of OST music and the various license restrictions here: [https://synthridersvr.com/music-licensing](https://synthridersvr.com/music-licensing).  
 The only OST for which you have complete license to use and monetize is the **99 Lives Pack**.
 
 ___
