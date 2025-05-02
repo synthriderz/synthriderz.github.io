@@ -91,7 +91,7 @@ ___
 
 ### Q: My avatar is.. (too big / too small / isn’t scaling correctly / not matching me)..?
 
-You can repeat the calibration process at any time, by standing still with your arms by your side, looking ahead and then squeezing both triggers.
+You can repeat the calibration process at any time, by standing still with your arms by your side, looking ahead, and then squeezing both triggers.
 
 ___
 
@@ -195,7 +195,7 @@ The only OST for which you have complete license to use and monetize is the **99
 ___
 
 `Q: I’d like to use the Synth Riders logo and assets for my videos, where can I get it?`  
-The Synth Riders team have a presskit with their official assets where you’ll find logos, screenshots and videos for your use located here: [Google Drive](https://drive.google.com/drive/folders/16vfY8vvl63XPB8jT7x0U8qev3hRPoED6)
+The Synth Riders team have a presskit with their official assets where you’ll find logos, screenshots, and videos for your use located here: [https://presskit.synthridersvr.com](https://presskit.synthridersvr.com)
 
 ## YURfit
 
