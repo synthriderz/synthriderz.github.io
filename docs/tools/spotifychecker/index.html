@@ -195,8 +195,7 @@
             next = data.next;
         }
 
-        for (let i = 0; i < tracks.length; i++) {
-            const track = tracks[i];
+        const lis = tracks.map(track => {
             const li = document.createElement("li");
             const title = `${track.name} - ${track.artists.map(a => a.name).join(", ")}`;
             li.textContent = title;
@@ -205,17 +204,23 @@
             span.textContent = " 🔍";
             li.appendChild(span);
             list.appendChild(li);
+            return {track, span};
+        });
 
-            progress.style.width = `${((i + 1) / tracks.length) * 100}%`;
+        for (let i = 0; i < lis.length; i++) {
+            const {track, span} = lis[i];
+            progress.style.width = `${((i + 1) / lis.length) * 100}%`;
             await new Promise(resolve => setTimeout(resolve, 200));
 
-            const res = await fetch(`https://synthriderz.com/api/search?q=${encodeURIComponent(track.name)}`);
+            const searchQuery = encodeURIComponent(`{"ost":{},"$or":[{"text_search":{"$tsQuery":"${track.name}"}},{"files.text_search":{"$tsQuery":"${track.name}"}},{"artist":{"$contL":"${track.name}"}},{"title":{"$contL":"${track.name}"}},{"user.username":{"$contL":"${track.name}"}},{"collaborators.user.username":{"$contL":"${track.name}"}},{"":{}}]}`);
+            const url = `https://synthriderz.com/api/beatmaps?select=id,artist,title,mapper,user.id,user.username,cover_url,cover_version,published_at,download_count,upvote_count,downvote_count,vote_diff&join[]=collaborators&join[]=collaborators.user%7C%7Cid,username&join[]=files%7C%7Cid&join[]=tags&join[]=tags.tag&sort=published_at,DESC&limit=5&page=1&s=${searchQuery}`;
+            const res = await fetch(url);
             const data = await res.json();
             span.classList.remove("checking");
-            if (data.results && data.results.length > 0) {
+            if (data && data.length > 0) {
                 span.classList.add("available");
                 span.textContent = " ✅";
-                foundSongs.push(data.results[0]);
+                foundSongs.push(data[0]);
             } else {
                 span.classList.add("unavailable");
                 span.textContent = " ❌";
@@ -238,7 +243,7 @@
             dataString: foundSongs.map(song => ({
                 hash: song.hash,
                 name: song.title,
-                author: song.author,
+                author: song.artist,
                 beatmapper: song.mapper,
                 difficulty: 5,
                 trackDuration: 0,
