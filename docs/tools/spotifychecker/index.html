@@ -113,7 +113,7 @@
 
 <script>
     const clientId = "a1d54513211d4fa1aa16100d70ffabb2";
-    const redirectUri = window.location.href.split("#")[0];
+    const redirectUri = (window.location.origin + window.location.pathname).replace(/\/$/, '');
     const scopes = "playlist-read-private playlist-read-collaborative";
     let accessToken = null;
     let selectedPlaylistId = null;
