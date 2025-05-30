@@ -84,22 +84,28 @@
 <div id="landing">
     <h1>SynthRiderz Playlist Checker</h1>
     <p>This tool checks whether the songs in your Spotify playlists are available as custom maps on SynthRiderz.</p>
-    <button id="loginBtn">Login with Spotify and Check Playlist Availability</button>
+    <button id="loginBtn">Login with Spotify</button>
+</div>
+
+<div id="playlistUI" class="hidden">
+    <h2>Select a Playlist</h2>
+    <select id="playlistSelect"></select>
+    <div class="actions">
+        <button onclick="checkPlaylist('full')">Check Full Playlist</button>
+        <button onclick="exportPlaylist()">⬇ Export Found Songs (.playlist)</button>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+    </div>
+    <ul id="songList"></ul>
 </div>
 
 <script>
     const clientId = "a1d54513211d4fa1aa16100d70ffabb2";
     const redirectUri = window.location.origin + window.location.pathname.replace(/\/$/, '');
     const scopes = ["playlist-read-private", "playlist-read-collaborative"];
-
-    async function generateCodeChallenge(codeVerifier) {
-        const data = new TextEncoder().encode(codeVerifier);
-        const digest = await crypto.subtle.digest("SHA-256", data);
-        return btoa(String.fromCharCode(...new Uint8Array(digest)))
-            .replace(/\+/g, "-")
-            .replace(/\//g, "_")
-            .replace(/=+$/, "");
-    }
+    let foundSongs = [];
+    let selectedPlaylistName = "Spotify Import";
 
     function generateCodeVerifier() {
         const array = new Uint32Array(56);
@@ -107,16 +113,17 @@
         return Array.from(array, dec => ('0' + dec.toString(16)).slice(-2)).join('');
     }
 
-    function getStoredToken() {
-        return sessionStorage.getItem("spotify_access_token");
+    async function generateCodeChallenge(codeVerifier) {
+        const data = new TextEncoder().encode(codeVerifier);
+        const digest = await crypto.subtle.digest("SHA-256", data);
+        return btoa(String.fromCharCode(...new Uint8Array(digest)))
+            .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
     }
 
     async function startLogin() {
         const codeVerifier = generateCodeVerifier();
         const codeChallenge = await generateCodeChallenge(codeVerifier);
-
         sessionStorage.setItem("code_verifier", codeVerifier);
-
         const authUrl = `https://accounts.spotify.com/authorize` +
             `?client_id=${clientId}` +
             `&response_type=code` +
@@ -124,7 +131,6 @@
             `&scope=${encodeURIComponent(scopes.join(" "))}` +
             `&code_challenge_method=S256` +
             `&code_challenge=${codeChallenge}`;
-
         window.location.href = authUrl;
     }
 
@@ -137,34 +143,139 @@
             redirect_uri: redirectUri,
             code_verifier: codeVerifier
         });
-
-        const response = await fetch("https://accounts.spotify.com/api/token", {
+        const res = await fetch("https://accounts.spotify.com/api/token", {
             method: "POST",
             headers: {"Content-Type": "application/x-www-form-urlencoded"},
             body: body.toString()
         });
+        const data = await res.json();
+        if (data.access_token) {
+            sessionStorage.setItem("spotify_access_token", data.access_token);
+            return data.access_token;
+        } else {
+            throw new Error("Token exchange failed");
+        }
+    }
 
-        if (!response.ok) throw new Error("Token exchange failed");
-        const data = await response.json();
-        sessionStorage.setItem("spotify_access_token", data.access_token);
-        return data.access_token;
+    async function loadPlaylists(token) {
+        const res = await fetch("https://api.spotify.com/v1/me/playlists", {
+            headers: {Authorization: `Bearer ${token}`}
+        });
+        const data = await res.json();
+        const select = document.getElementById("playlistSelect");
+        select.innerHTML = "";
+        data.items.forEach(p => {
+            const opt = document.createElement("option");
+            opt.value = p.id;
+            opt.textContent = p.name;
+            opt.dataset.name = p.name;
+            select.appendChild(opt);
+        });
+        select.onchange = () => {
+            selectedPlaylistName = select.options[select.selectedIndex].dataset.name || "Spotify Import";
+        };
+        select.onchange();
+    }
+
+    async function checkPlaylist() {
+        const token = sessionStorage.getItem("spotify_access_token");
+        const playlistId = document.getElementById("playlistSelect").value;
+        const progress = document.getElementById("progressBar");
+        const list = document.getElementById("songList");
+        list.innerHTML = "";
+        progress.style.width = "0%";
+        foundSongs = [];
+
+        let next = `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=100`;
+        let tracks = [];
+        while (next) {
+            const res = await fetch(next, {headers: {Authorization: `Bearer ${token}`}});
+            const data = await res.json();
+            tracks = tracks.concat(data.items.filter(item => item.track).map(item => item.track));
+            next = data.next;
+        }
+
+        for (let i = 0; i < tracks.length; i++) {
+            const track = tracks[i];
+            const li = document.createElement("li");
+            const title = `${track.name} - ${track.artists.map(a => a.name).join(", ")}`;
+            li.textContent = title;
+            const span = document.createElement("span");
+            span.className = "status checking";
+            span.textContent = " 🔍";
+            li.appendChild(span);
+            list.appendChild(li);
+
+            progress.style.width = `${((i + 1) / tracks.length) * 100}%`;
+            await new Promise(resolve => setTimeout(resolve, 200));
+
+            const res = await fetch(`https://synthriderz.com/api/search?q=${encodeURIComponent(track.name)}`);
+            const data = await res.json();
+            span.classList.remove("checking");
+            if (data.results && data.results.length > 0) {
+                span.classList.add("available");
+                span.textContent = " ✅";
+                foundSongs.push(data.results[0]);
+            } else {
+                span.classList.add("unavailable");
+                span.textContent = " ❌";
+            }
+        }
+    }
+
+    function exportPlaylist() {
+        const timestamp = Math.floor(Date.now() / 1000);
+        const playlist = {
+            namePlaylist: selectedPlaylistName,
+            description: "Generated by SynthRiderz Playlist Checker",
+            gradientTop: "#444",
+            gradientDown: "#222",
+            colorTitle: "#FFFFFF",
+            colorTexture: "#464956",
+            SelectedTexture: 0,
+            SelectedIconIndex: 0,
+            creationDate: timestamp,
+            dataString: foundSongs.map(song => ({
+                hash: song.hash,
+                name: song.title,
+                author: song.author,
+                beatmapper: song.mapper,
+                difficulty: 5,
+                trackDuration: 0,
+                addedTime: timestamp
+            }))
+        };
+
+        const blob = new Blob([JSON.stringify(playlist, null, 2)], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${selectedPlaylistName.replace(/[^a-z0-9]/gi, '_')}.playlist`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     }
 
     async function initialize() {
         const params = new URLSearchParams(window.location.search);
         const code = params.get("code");
-        const token = getStoredToken();
+        const token = sessionStorage.getItem("spotify_access_token");
 
         if (token) {
-            document.getElementById("landing").innerHTML = `<p>🎉 Logged in! Reload or continue to playlist checker.</p>`;
+            document.getElementById("landing").classList.add("hidden");
+            document.getElementById("playlistUI").classList.remove("hidden");
+            await loadPlaylists(token);
             return;
         }
 
         if (code) {
             try {
-                const accessToken = await exchangeToken(code);
+                const newToken = await exchangeToken(code);
                 window.history.replaceState({}, document.title, redirectUri);
-                document.getElementById("landing").innerHTML = `<p>🎉 Logged in! Reload or continue to playlist checker.</p>`;
+                document.getElementById("landing").classList.add("hidden");
+                document.getElementById("playlistUI").classList.remove("hidden");
+                await loadPlaylists(newToken);
             } catch (err) {
                 alert("Login failed: " + err.message);
             }
