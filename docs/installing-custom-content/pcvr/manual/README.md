@@ -20,7 +20,7 @@ Within this directory, custom content can be installed to the following location
 | Content Type     | Folder         | File Type                |
 |------------------|----------------|--------------------------|
 | **Custom Songs** | `CustomSongs`  | `.synth`                 |
-| **Stages**       | `CustomStages` | `.stage` or `.spinstage` |
+| **Stages**       | `CustomStages` | `.stage`
 | **Avatars**      | `Avatars`      | `.vrm`                   |
 | **Playlists**    | `Playlist`     | `.playlist`              |
 
