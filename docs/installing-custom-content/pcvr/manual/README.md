@@ -22,7 +22,7 @@ Within this directory, custom content can be installed to the following location
 |------------------|----------------|--------------------------|
 | **Custom Songs** | `CustomSongs`  | `.synth`                 |
 | **Stages**       | `CustomStages` | `.stage`
-| **Avatars**      | `CustomAvatars`      | `.vrm`                   |
+| **Avatars**      | `Avatars`      | `.vrm`                   |
 | **Playlists**    | `CustomPlaylists`     | `.playlist`              |
 | **Indicators**    | `CustomIndicators`     | `.png or .jpg`              |
 
