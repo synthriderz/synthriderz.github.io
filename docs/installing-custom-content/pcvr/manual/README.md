@@ -8,8 +8,9 @@ All custom content is supported on PCVR, including:
 
 - Custom Songs
 - Playlists
-- Stages
+- Stages (as of latest update to SynthRiders all stage types are bundled under 1 file)
 - Avatars
+- Indicators(hand orbs)
 
 ## Install Content
 
@@ -21,8 +22,11 @@ Within this directory, custom content can be installed to the following location
 |------------------|----------------|--------------------------|
 | **Custom Songs** | `CustomSongs`  | `.synth`                 |
 | **Stages**       | `CustomStages` | `.stage`
-| **Avatars**      | `Avatars`      | `.vrm`                   |
-| **Playlists**    | `Playlist`     | `.playlist`              |
+| **Avatars**      | `CustomAvatars`      | `.vrm`                   |
+| **Playlists**    | `CustomPlaylists`     | `.playlist`              |
+| **Indicators**    | `CustomIndicators`     | `.png or .jpg`              |
+
+**NOTE: Indicators(hand orbs)textures need to have two of them and labeled as follows LeftIndicatorTex and RightIndicatorTex and only 1 set can be installed**
 
 !> Unzip first!  
 If you have downloaded any `.zip` content from the site, make sure to unzip it first before moving it to the correct locations above
