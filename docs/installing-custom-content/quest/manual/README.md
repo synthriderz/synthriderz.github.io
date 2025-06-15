@@ -38,7 +38,7 @@ Within this directory, custom content can be installed to the following location
 | Content Type     | Folder         | File Type                                         |
 |------------------|----------------|---------------------------------------------------|
 | **Custom Songs** | `CustomSongs`  | `.synth`                                          |
-| **Stages**       | `CustomStages` | PC: `.stage` or `.spinstage` Quest: `.stagedroid` |
+| **Stages**       | `CustomStages` | PC: `.stage`  Quest: `.stagedroid` |
 | **Playlists**    | `Playlist`     | `.playlist`                                       |
 
 !> Unzip first!
