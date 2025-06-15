@@ -16,7 +16,7 @@ All custom content is supported on PCVR, including:
 
 From the file manager on your PC, **navigate to your Synth Riders installation directory**.
 
-Within this directory, custom content can be installed to the following locations:
+Within this directorylook for a SynthRidersUC folder, custom content can be installed to the following locations:
 
 | Content Type     | Folder         | File Type                |
 |------------------|----------------|--------------------------|
