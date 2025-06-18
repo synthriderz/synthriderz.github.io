@@ -1,183 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SynthRiderz Playlist Checker (PKCE Auth)</title>
     <style>
-        body {
-            font-family: sans-serif;
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-            background: #f9f9f9;
-            color: #333;
-        }
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+        background: #f9f9f9;
+        color: #333;
+      }
 
-        input, button, select {
-            padding: 0.5rem;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            width: 100%;
-        }
+      input,
+      button,
+      select {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        width: 100%;
+      }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
-        li {
-            margin: 0.5rem 0;
-        }
+      li {
+        margin: 0.5rem 0;
+      }
 
-        .status {
-            margin-left: 0.5rem;
-            font-size: 1.2rem;
-        }
+      .status {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+      }
 
-        .available {
-            color: green;
-        }
+      .available {
+        color: green;
+      }
 
-        .unavailable {
-            color: red;
-        }
+      .unavailable {
+        color: red;
+      }
 
-        .checking {
-            color: orange;
-        }
+      .checking {
+        color: orange;
+      }
 
-        .link-icon {
-            text-decoration: none;
-            margin-left: 0.5rem;
-            font-size: 0.9rem;
-        }
+      .link-icon {
+        text-decoration: none;
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+      }
 
-        .hidden {
-            display: none;
-        }
+      .hidden {
+        display: none;
+      }
 
-        .actions {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
 
-        .progress-bar {
-            height: 20px;
-            background: #eee;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 1rem;
-        }
+      .progress-bar {
+        height: 20px;
+        background: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
 
-        .progress {
-            height: 100%;
-            width: 0%;
-            background: #4caf50;
-            transition: width 0.2s;
-        }
+      .progress {
+        height: 100%;
+        width: 0%;
+        background: #4caf50;
+        transition: width 0.2s;
+      }
     </style>
-</head>
-<body>
-<div id="landing">
-    <h1>SynthRiderz Playlist Checker</h1>
-    <p>This tool checks whether the songs in your Spotify playlists are available as custom maps on SynthRiderz.</p>
-    <button id="loginBtn">Login with Spotify</button>
-</div>
+  </head>
+  <body>
+    <div id="landing">
+      <h1>SynthRiderz Playlist Checker</h1>
+      <p>This tool checks whether the songs in your Spotify playlists are available as custom maps on SynthRiderz.</p>
+      <button id="loginBtn">Login with Spotify</button>
+    </div>
 
-<div id="playlistUI" class="hidden">
-    <h2>Select a Playlist</h2>
-    <select id="playlistSelect"></select>
-    <div class="actions">
-        <button onclick="checkPlaylist('full')">Check Full Playlist</button>
+    <div id="playlistUI" class="hidden">
+      <h2>Select a Playlist</h2>
+      <select id="playlistSelect"></select>
+      <div class="actions">
+        <button onclick="checkPlaylist()">Check Full Playlist</button>
         <button onclick="exportPlaylist()">⬇ Export Found Songs (.playlist)</button>
-    </div>
-    <div class="progress-bar">
+      </div>
+      <div class="progress-bar">
         <div class="progress" id="progressBar"></div>
+      </div>
+      <ul id="songList"></ul>
     </div>
-    <ul id="songList"></ul>
-</div>
 
-<script>
-    const clientId = "a1d54513211d4fa1aa16100d70ffabb2";
-    const redirectUri = window.location.origin + window.location.pathname.replace(/\/$/, '');
-    const scopes = ["playlist-read-private", "playlist-read-collaborative"];
-    let foundSongs = [];
-    let selectedPlaylistName = "Spotify Import";
+    <script>
+      const clientId = "a1d54513211d4fa1aa16100d70ffabb2";
+      const redirectUri = window.location.origin + window.location.pathname.replace(/\/$/, "");
+      const scopes = ["playlist-read-private", "playlist-read-collaborative"];
+      let foundSongs = [];
+      let selectedPlaylistName = "Spotify Import";
 
-    function generateCodeVerifier() {
+      function generateCodeVerifier() {
         const array = new Uint32Array(56);
         crypto.getRandomValues(array);
-        return Array.from(array, dec => ('0' + dec.toString(16)).slice(-2)).join('');
-    }
+        return Array.from(array, (dec) => ("0" + dec.toString(16)).slice(-2)).join("");
+      }
 
-    async function generateCodeChallenge(codeVerifier) {
+      async function generateCodeChallenge(codeVerifier) {
         const data = new TextEncoder().encode(codeVerifier);
         const digest = await crypto.subtle.digest("SHA-256", data);
         return btoa(String.fromCharCode(...new Uint8Array(digest)))
-            .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-    }
+          .replace(/\+/g, "-")
+          .replace(/\//g, "_")
+          .replace(/=+$/, "");
+      }
 
-    async function startLogin() {
+      async function startLogin() {
         const codeVerifier = generateCodeVerifier();
         const codeChallenge = await generateCodeChallenge(codeVerifier);
         sessionStorage.setItem("code_verifier", codeVerifier);
-        const authUrl = `https://accounts.spotify.com/authorize` +
-            `?client_id=${clientId}` +
-            `&response_type=code` +
-            `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-            `&scope=${encodeURIComponent(scopes.join(" "))}` +
-            `&code_challenge_method=S256` +
-            `&code_challenge=${codeChallenge}`;
+        const authUrl =
+          `https://accounts.spotify.com/authorize` + `?client_id=${clientId}` + `&response_type=code` + `&redirect_uri=${encodeURIComponent(redirectUri)}` + `&scope=${encodeURIComponent(scopes.join(" "))}` + `&code_challenge_method=S256` + `&code_challenge=${codeChallenge}`;
         window.location.href = authUrl;
-    }
+      }
 
-    async function exchangeToken(code) {
+      async function exchangeToken(code) {
         const codeVerifier = sessionStorage.getItem("code_verifier");
         const body = new URLSearchParams({
-            client_id: clientId,
-            grant_type: "authorization_code",
-            code,
-            redirect_uri: redirectUri,
-            code_verifier: codeVerifier
+          client_id: clientId,
+          grant_type: "authorization_code",
+          code,
+          redirect_uri: redirectUri,
+          code_verifier: codeVerifier,
         });
         const res = await fetch("https://accounts.spotify.com/api/token", {
-            method: "POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: body.toString()
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
         });
         const data = await res.json();
         if (data.access_token) {
-            sessionStorage.setItem("spotify_access_token", data.access_token);
-            return data.access_token;
+          sessionStorage.setItem("spotify_access_token", data.access_token);
+          return data.access_token;
         } else {
-            throw new Error("Token exchange failed");
+          throw new Error("Token exchange failed");
         }
-    }
+      }
 
-    async function loadPlaylists(token) {
+      async function loadPlaylists(token) {
         const res = await fetch("https://api.spotify.com/v1/me/playlists", {
-            headers: {Authorization: `Bearer ${token}`}
+          headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
         const select = document.getElementById("playlistSelect");
         select.innerHTML = "";
-        data.items.forEach(p => {
-            const opt = document.createElement("option");
-            opt.value = p.id;
-            opt.textContent = p.name;
-            opt.dataset.name = p.name;
-            select.appendChild(opt);
+        data.items.forEach((p) => {
+          const opt = document.createElement("option");
+          opt.value = p.id;
+          opt.textContent = p.name;
+          opt.dataset.name = p.name;
+          select.appendChild(opt);
         });
         select.onchange = () => {
-            selectedPlaylistName = select.options[select.selectedIndex].dataset.name || "Spotify Import";
+          selectedPlaylistName = select.options[select.selectedIndex].dataset.name || "Spotify Import";
         };
         select.onchange();
-    }
+      }
 
-    async function checkPlaylist() {
+      async function checkPlaylist() {
         const token = sessionStorage.getItem("spotify_access_token");
         const playlistId = document.getElementById("playlistSelect").value;
         const progress = document.getElementById("progressBar");
@@ -189,101 +188,111 @@
         let next = `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=100`;
         let tracks = [];
         while (next) {
-            const res = await fetch(next, {headers: {Authorization: `Bearer ${token}`}});
-            const data = await res.json();
-            tracks = tracks.concat(data.items.filter(item => item.track).map(item => item.track));
-            next = data.next;
+          const res = await fetch(next, { headers: { Authorization: `Bearer ${token}` } });
+          const data = await res.json();
+          tracks = tracks.concat(data.items.filter((item) => item.track).map((item) => item.track));
+          next = data.next;
         }
 
         for (let i = 0; i < tracks.length; i++) {
-            const track = tracks[i];
-            const li = document.createElement("li");
-            const title = `${track.name} - ${track.artists.map(a => a.name).join(", ")}`;
-            li.textContent = title;
-            const span = document.createElement("span");
-            span.className = "status checking";
-            span.textContent = " 🔍";
-            li.appendChild(span);
-            list.appendChild(li);
+          const track = tracks[i];
+          const li = document.createElement("li");
+          const title = `${track.name} - ${track.artists.map((a) => a.name).join(", ")}`;
+          li.textContent = title;
+          const span = document.createElement("span");
+          span.className = "status checking";
+          span.textContent = " 🔍";
+          li.appendChild(span);
+          list.appendChild(li);
 
-            progress.style.width = `${((i + 1) / tracks.length) * 100}%`;
-            await new Promise(resolve => setTimeout(resolve, 200));
+          progress.style.width = `${((i + 1) / tracks.length) * 100}%`;
+          await new Promise((resolve) => setTimeout(resolve, 200));
 
-            const res = await fetch(`https://synthriderz.com/api/beatmaps?q=${encodeURIComponent(track.name)}&sort=published_at,DESC`);
-            const data = await res.json();
-            span.classList.remove("checking");
-            if (data && data.data && data.data.length > 0) {
-                span.classList.add("available");
-                span.textContent = " ✅";
-                foundSongs.push(data.data[0]);
-            } else {
-                span.classList.add("unavailable");
-                span.textContent = " ❌";
-            }
+          const apiUrl = `https://synthriderz.com/api/beatmaps?q=${encodeURIComponent(track.name)}&sort=published_at,DESC`;
+          const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`);
+          const results = await res.json();
+          span.classList.remove("checking");
+          if (Array.isArray(results) && results.length > 0) {
+            const beatmap = results[0];
+            span.classList.add("available");
+            span.textContent = " ✅";
+
+            const link = document.createElement("a");
+            link.href = `https://synthriderz.com/beatmaps/${beatmap.id}`;
+            link.textContent = "🔗";
+            link.target = "_blank";
+            link.className = "link-icon";
+            li.appendChild(link);
+
+            foundSongs.push(beatmap);
+          } else {
+            span.classList.add("unavailable");
+            span.textContent = " ❌";
+          }
         }
-    }
+      }
 
-    function exportPlaylist() {
+      function exportPlaylist() {
         const timestamp = Math.floor(Date.now() / 1000);
         const playlist = {
-            namePlaylist: selectedPlaylistName,
-            description: "Generated by SynthRiderz Playlist Checker",
-            gradientTop: "#444",
-            gradientDown: "#222",
-            colorTitle: "#FFFFFF",
-            colorTexture: "#464956",
-            SelectedTexture: 0,
-            SelectedIconIndex: 0,
-            creationDate: timestamp,
-            dataString: foundSongs.map(song => ({
-                hash: song.hash,
-                name: song.title,
-                author: song.author,
-                beatmapper: song.mapper,
-                difficulty: 5,
-                trackDuration: 0,
-                addedTime: timestamp
-            }))
+          namePlaylist: selectedPlaylistName,
+          description: "Generated by SynthRiderz Playlist Checker",
+          gradientTop: "#444",
+          gradientDown: "#222",
+          colorTitle: "#FFFFFF",
+          colorTexture: "#464956",
+          SelectedTexture: 0,
+          SelectedIconIndex: 0,
+          creationDate: timestamp,
+          dataString: foundSongs.map((song) => ({
+            hash: song.hash,
+            name: song.title,
+            author: song.artist,
+            beatmapper: song.mapper,
+            difficulty: 5,
+            trackDuration: 0,
+            addedTime: timestamp,
+          })),
         };
 
-        const blob = new Blob([JSON.stringify(playlist, null, 2)], {type: 'application/json'});
+        const blob = new Blob([JSON.stringify(playlist, null, 2)], { type: "application/json" });
         const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
+        const a = document.createElement("a");
         a.href = url;
-        a.download = `${selectedPlaylistName.replace(/[^a-z0-9]/gi, '_')}.playlist`;
+        a.download = `${selectedPlaylistName.replace(/[^a-z0-9]/gi, "_")}.playlist`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-    }
+      }
 
-    async function initialize() {
+      async function initialize() {
         const params = new URLSearchParams(window.location.search);
         const code = params.get("code");
         const token = sessionStorage.getItem("spotify_access_token");
 
         if (token) {
-            document.getElementById("landing").classList.add("hidden");
-            document.getElementById("playlistUI").classList.remove("hidden");
-            await loadPlaylists(token);
-            return;
+          document.getElementById("landing").classList.add("hidden");
+          document.getElementById("playlistUI").classList.remove("hidden");
+          await loadPlaylists(token);
+          return;
         }
 
         if (code) {
-            try {
-                const newToken = await exchangeToken(code);
-                window.history.replaceState({}, document.title, redirectUri);
-                document.getElementById("landing").classList.add("hidden");
-                document.getElementById("playlistUI").classList.remove("hidden");
-                await loadPlaylists(newToken);
-            } catch (err) {
-                alert("Login failed: " + err.message);
-            }
+          try {
+            const newToken = await exchangeToken(code);
+            window.history.replaceState({}, document.title, redirectUri);
+            document.getElementById("landing").classList.add("hidden");
+            document.getElementById("playlistUI").classList.remove("hidden");
+            await loadPlaylists(newToken);
+          } catch (err) {
+            alert("Login failed: " + err.message);
+          }
         }
-    }
+      }
 
-    document.getElementById("loginBtn").addEventListener("click", startLogin);
-    initialize();
-</script>
-</body>
+      document.getElementById("loginBtn").addEventListener("click", startLogin);
+      initialize();
+    </script>
+  </body>
 </html>
