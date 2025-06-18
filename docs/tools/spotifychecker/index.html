@@ -208,7 +208,8 @@
           progress.style.width = `${((i + 1) / tracks.length) * 100}%`;
           await new Promise((resolve) => setTimeout(resolve, 200));
 
-          const res = await fetch(`https://synthriderz.com/api/beatmaps?q=${encodeURIComponent(track.name)}&sort=published_at,DESC`);
+          const apiUrl = `https://synthriderz.com/api/beatmaps?q=${encodeURIComponent(track.name)}&sort=published_at,DESC`;
+          const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`);
           const results = await res.json();
           span.classList.remove("checking");
           if (Array.isArray(results) && results.length > 0) {
