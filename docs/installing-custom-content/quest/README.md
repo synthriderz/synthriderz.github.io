@@ -16,6 +16,8 @@ Custom Content can be installed from a desktop computer to your Quest device usi
     - Desktop application for installing custom songs
 - [Manual Install](/installing-custom-content/quest/manual/)
     - Download custom content and manually place it on your Quest device
+- [SRQuestDownloader](https://sidequestvr.com/app/12996/srquestdownloader)
+    - SideQuest App to manage and install custom content directly on your Quest
 
 ### Advanced
 
