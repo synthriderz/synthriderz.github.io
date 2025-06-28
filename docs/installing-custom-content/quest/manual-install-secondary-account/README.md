@@ -38,7 +38,7 @@ Before continuing, make sure you have met each of the following prerequisites:
 | Content Type     | Folder         | File Type                                         |
 |------------------|----------------|---------------------------------------------------|
 | **Custom Songs** | `CustomSongs`  | `.synth`                                          |
-| **Stages**       | `CustomStages` | PC: `.stage` or `.spinstage` Quest: `.stagedroid` |
+| **Stages**       | `CustomStages` | PC: `.stage` Quest: `.stagedroid` |
 | **Playlists**    | `Playlist`     | `.playlist`                                       |
 
 !> **Unzip first!**  
