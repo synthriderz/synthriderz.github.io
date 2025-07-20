@@ -1,6 +1,6 @@
 # Getting Started with Custom Stages
 
-> NOTE: With the latest v3 update to Synth Riders, the game now uses Unity 2021.3.22f1, and it is NOT POSSIBLE to create stages for the game using the current stage template. As such, this guide is mostly obsolete. It will be updated once the new stage template is available
+> NOTE: With the latest Mixed Reality and v3 updates to Synth Riders, the game now uses Unity 2021.3.22f1, and it is NOT POSSIBLE to create stages for the game using the current stage template. As such, this guide is mostly obsolete. It will be updated once the new stage template is released from closed beta and made publicly available.
 
 This page is about _making_ custom stages and experiences. If you want to play them, then check out how to install it for [PCVR](/installing-custom-content/pcvr/) or for [Quest](/installing-custom-content/quest/)
 
