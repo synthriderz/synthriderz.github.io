@@ -38,15 +38,13 @@ To set up your audio for use in the beatmap editor, download and install the fre
     - **Song name:** The song title.
     - **Track:** Click the magnifying glass on this field to browse your system for the .ogg file you prepared earlier.
     - **Mapper name:** Your name or online handle. Keep in mind that when you share this map, other players will see this name.
-    - **Explicit lyrics:** If your song has explicit content, please tick off this checkbox so that other players are informed.
+    - **Explicit lyrics (beta editor only):** If your song has explicit content, please tick off this checkbox so that other players are informed.
     - **Artwork:** Click the **Replace** button to select the image that appears next to this song in game. We recommend using the official art from the album or single release.
 5. Click the **START** button when you're ready to start mapping!
 
 # Finding and setting BPM and Start Offset
 
-This will allow your beatmap to stay in sync with the music. The easiest way to find BPM (beats per minute, aka tempo) and Start Offset is with the software tool [ArrowVortex](https://cdn.discordapp.com/attachments/443569023951568906/662417326771273728/ArrowVortex.zip).
-
-> The above link is a more convenient .zip version of the tool that is otherwise found on the [ArrowVortex website](https://arrowvortex.ddrnl.com/).
+This will allow your beatmap to stay in sync with the music. The easiest way to find BPM (beats per minute, aka tempo) and Start Offset is with the software tool [ArrowVortex](https://github.com/uvcat7/ArrowVortex/releases/).
 
 1. Launch ArrowVortex.
 2. Select File > Open... from the top menu, and select the .ogg file you prepared for this map.
@@ -61,8 +59,8 @@ out the Advanced mapping guides to learn how to do this.
 5. Select the BPM that seems the most correct (if you're unsure, just use the one with the highest %) and click the **Apply BPM** button.
 6. If the **Music offset** field at the top of the window is negative, click the **Move first beat up** button until it is a positive number.
 7. The BPM you selected is the one you should use for your map. Make a note of it, or just keep this window open.
-8. The **Music offset** field is the Start Offset. Make a note of it, or just keep this window open.
-9. Once you have the BPM and Start Offset, enter them into these fields at the upper left corner of the beatmap editor. Make sure to enter the offset in milliseconds, and verify that it's correct after clicking **SAVE**.
+8. The **Music offset** field is the Start Offset. Make a note of it, or just keep this window open. Please note that if you are suggested a negative offset, press "^1" until the offset gets positive, as the beatmap editor will not accept negative offsets.
+9. Once you have the BPM and Start Offset, enter them into these fields at the upper left corner of the beatmap editor. Make sure to enter the offset in milliseconds (whereas the value in ArrowVortex will be in seconds), and verify that it's correct after clicking **SAVE**.
 
 # Now start mapping!
 
