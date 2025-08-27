@@ -59,7 +59,7 @@ out the Advanced mapping guides to learn how to do this.
 5. Select the BPM that seems the most correct (if you're unsure, just use the one with the highest %) and click the **Apply BPM** button.
 6. If the **Music offset** field at the top of the window is negative, click the **Move first beat up** button until it is a positive number.
 7. The BPM you selected is the one you should use for your map. Make a note of it, or just keep this window open.
-8. The **Music offset** field is the Start Offset. Make a note of it, or just keep this window open. Please note that if you are suggested a negative offset, press "^1" until the offset gets positive, as the beatmap editor will not accept negative offsets.
+8. The **Music offset** field is the Start Offset. Make a note of it, or just keep this window open. Please note that if you are suggested a negative offset, click "^1" until the offset becomes positive, as the beatmap editor will not accept negative offsets.
 9. Once you have the BPM and Start Offset, enter them into these fields at the upper left corner of the beatmap editor. Make sure to enter the offset in milliseconds (whereas the value in ArrowVortex will be in seconds), and verify that it's correct after clicking **SAVE**.
 
 # Now start mapping!
