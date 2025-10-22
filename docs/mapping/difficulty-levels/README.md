@@ -66,13 +66,13 @@ Wall-art far from the play area is more
 ### Easy
 > _"There is no such thing as too easy for easy!"_
 
-The defining principal for an Easy map is that it must playable without any experience or muscle memory.  Expect easy level players to have to make a concious deliberate thought about each and every note, and concious deliberate thought to move the correct hand (or hands) towards it. Most players, even those who are new to video gams and VR, will find hand/eye coordination natural, but expect they will only be able to concentrate on one thing at a time. Anyone, even a child using VR for the first time, should be able to play an Easy map without failing. 
+The defining principal for an Easy map is that it must be playable without any experience or muscle memory.  Expect Easy level players to have to make a conciously recognize and think about every note, and make a concious deliberate thought to move the correct hand (or hands) towards it. Most players, even those who are new to video gams and VR, will find hand/eye coordination natural, but expect they will only be able to concentrate on one thing at a time. Anyone should be able to play an Easy map without failing. 
 - Note density should be low — stick to downbeats, and on higher tempo songs, remove notes on less accented beats to give the player time to read upcoming notes.
 - Motions should be relatively slow, and give players plenty of time to lean towards the edge of the comfort circle as the patterns move there.
 - Patterns should be simple and mostly one-handed, although some symmetrical two handed patterns can work if there is extra space beforehand to read them.
 - Do not use crossed over two handed notes
 - Do not map beyond the yellow comfort circle.
-- Do not use one-handed specials
+- Two-handed special may be used, but give a lot of extra space (typically at least two full measures) before starting a two-handed special pattern.
 - Two-handed special may be used, but very sparingly. Give a lot of extra space (typically at least two full measures) before starting a two-handed special.
 - Do not make players suddenly reach to the opposite side of their body. It's best to start patterns off on the natural side of the hand and slowly move around the play space.
 - Keep the player's hands well away from their face, including the likely path their hands will take betweeen notess, we don't want players to risk their hitting their headset.
@@ -98,13 +98,12 @@ The underlying principals for a Normal map assume that the typical player is abl
 - Always start right/left notes on the natural side of the body; never start a pattern on the opposite side.
     - Making players reach across their body to play notes are OK later in a pattern, but avoid crossing deeper than about two grids.
 - Generally avoid crossed over two handed notes unless the section is exceptionally slow. Sudden crossovers are difficult for inexperienced players to react to.
-- Do not use buzzrails, tight note stacks, stacked rails, etc., in Normal. The player will have no idea what this means or what to do!
+- Do not use cosmetic notes like buzzrails, tight note stacks, stacked rails, etc., in Normal. The player will have no idea what this means or what to do! Use only the standard note types.
 - Do not use dodge walls and notes at the same time. At this difficulty, players need to focus when dodging walls and still typically move excessively far to avoid walls. Wall density should be low enough that the player has time to comfortably pivot and move.
 - Do not use crouch walls and notes at the same time. Crouch walls should be raised to suggest crouching, not require crouching.
 - Sudden crossovers are difficult for inexperienced players to react to. 
 - Keep the player's hands well away from their face, including the likely path their hands will take betweeen notess, we don't want players to risk their hitting their headset.
 - Keep wall art to a minimum. Walls near the play area can cause vertigo and VR sickness, and new players are especially susceptible. Do not place any walls beneath the play area. Avoid use of square or triangle tunnels, and do not place any wall art close to the play area. Some distant wall art is OK and can help make for a cool experience, especially at the end of the map when they have time to look. 
-- - Do not use buzzrails, tight note stacks, stacked rails, etc in Easy. The player will have no idea what this means or what to do!
 
 Normal maps allow enough movement that mappers should be able to choreograph the player to want move their core body. But Normal maps should be possible for seated players as well. Normal maps may bore an experienced player, but should still feel like they would be fun.
 
