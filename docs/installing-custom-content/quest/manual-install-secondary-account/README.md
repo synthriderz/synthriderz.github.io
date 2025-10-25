@@ -19,7 +19,7 @@ Applications installed on the Primary Account are shared between all account use
 1. **Primary and Secondary Accounts must be registered as Meta Developers.**
 2. Install Synplicity or SRQuestDownloader on the Primary Account.
 3. Switch to the Secondary Account and launch the app from the Unknown Sources area of the Library.
-4. Grant the `MANAGE_EXTERNAL_STORAGE` permission when prompted.
+4. Grant the `MANAGE ALL FILES` permission when prompted.
 5. Download desired custom content using the App. Both Apps will place the content automatically in the proper location.
 6. Launch Synth Riders in the Secondary Account. 
 7. Press the Custom Songs button in Synth Riders in the Secondary Account and grant the `MANAGE_EXTERNAL_STORAGE` permission when prompted.
@@ -41,8 +41,8 @@ Applications installed on the Primary Account are shared between all account use
 
 > This is the only method available without registering as a Meta Developer. However, it is highly recommended to register as a Meta Developer, which is very easy to do.
 
-1. Press the Custom Songs button in Synth Riders in the Secondary Account and grant the `MANAGE_EXTERNAL_STORAGE` permission when prompted.
-2. Install the app MobileVRStation through the Quest Store
+1. Press the Custom Songs button in Synth Riders in the Secondary Account and grant the `MANAGE ALL FILES` permission when prompted.
+2. Install the app MobileVRStation through the Quest Store on the Primary Account
 3. Run MobileVRStation in the Secondary Account and grant the `MANAGE_EXTERNAL_STORAGE` permission when prompted.
 4. Browse to [Synthriderz](https://synriderz.com) and download custom songs, stages, or playlists. These files will download to the `Downloads` folder by default.
 5. You must download each .synth file individually using the download button. .zip files are not supported.
@@ -54,11 +54,11 @@ Applications installed on the Primary Account are shared between all account use
 
 1. Download Custom Content through the Quest browser  
    _Any downloaded content will end up in the `Downloads` folder on your Quest device_
-2. Prior to installing any custom content, press the Custom Songs button in Synth Riders in the Secondary Account and grant the `MANAGE_EXTERNAL_STORAGE` permission when prompted. This will generate the `SynthridersUC` folders.
+2. Prior to installing any custom content, press the Custom Songs button in Synth Riders in the Secondary Account and grant the `MANAGE ALL FILES` permission when prompted. This will generate the `SynthridersUC` folders.
 3. Open X-Plore, MobileVRStation or your installed File Manager. 3rd party File Managers will be in from the Unknown Sources area of the Library.
 4. For two-pane File Managers: Mavigate the left pane to 'Downloads' and right pane to `SynthRidersUC`
 6. If your content was downloaded in a `.zip` file, open the zip to see the included files.
-7. Move the downloaded content files from the `Downloads` folder into the correct folder on the `SynthRidersUC` pane.  
+7. Move the downloaded content files from the `Downloads` folder into the correct subfolder within the `SynthRidersUC` folder.  
 
    Make sure to install content in the correct subfolder based on the file type:
 
@@ -76,4 +76,4 @@ You may then remove the original `.zip` file from your Quest.
 
 ## Troubleshooting
 1. If `SynthridersUC`, `SynthridersUC/CustomSongs`, `SynthridersUC/CustomStages`, or `SynthridersUC/CustomPlaylists` folders are missing, launch Synth Riders and press the Custom Songs button. This will generate a pop-up. You must grant SynthRiders the `MANAGE_EXTERNAL_STORAGE` permission. Once granted, it will automatically generate these folders. You may manually create them, but SynthRiders will not be able to access them without this permission.
-2. All applications used for this method must have the `MANAGE_EXTERNAL_STORAGE` permission. There are known issues in some Meta OS versions where secondary users do not recieve prompting for applications sideloaded by the primary account holder and cannot manually grant the permissions in Quest Settings, and so are unable to access the necessary folders. The workaround is to uninstall and reinstall the app from the primary account, but do NOT run it in the primary account: run it first in the secondary account before running on the primary account.
+2. All applications used for this method must have the `MANAGE ALL FILES` permission. There are known issues in some Meta OS versions where secondary users do not recieve prompting for applications sideloaded by the primary account holder and cannot manually grant the permissions in Quest Settings, and so are unable to access the necessary folders. The workaround is to uninstall and reinstall the app from the primary account, but do NOT run it in the primary account: run it first in the secondary account before running on the primary account.

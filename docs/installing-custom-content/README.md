@@ -18,12 +18,18 @@ Applicable hardware includes:
 - Oculus Rift/Rift S
 - Oculus Quest(all variants) using **Oculus Link**, **SteamLink** or **Virtual Desktop**
 
-### Quest
+## Quest
 
-If you are using the Oculus Quest version of the game, follow the Quest Guide below:
+If you are using the Meta Quest version of the game, follow the Quest Guide below:
 
 - [Installing Custom Content _**Quest Guide**_](/installing-custom-content/quest/)
 
 Applicable hardware includes:
+- Oculus Quest
+- Meta Quest 2
+- Meta Quest Pro
+- Meta Quest 3
+- Meta Quest 3S 
 
-- Oculus Quest (all variants)
+The original Oculus Quest has been deprecated and there may be some variations.
+Pico users should also use the Quest Guide, though there may be some variations.
