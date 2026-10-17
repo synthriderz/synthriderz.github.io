@@ -12,6 +12,8 @@ It's helpful to first understand two scientific concepts that drive many of the 
 
 The more notes per second you need to hit, the more difficult it will be for players to keep up. Newer players need time to see a note, then coordinate their motion to reach it. They will not focus as much on upcoming notes until the current one is hit. Experienced players can more easily read several notes in advance and plan out their motions.
 
+Note stacks should not normally be denser than 1/16, and should never be denser than 1/32 or there is risk of causing performance issues for some players.
+
 ### Motion speed and acceleration
 
 The speed and force of motions also contributes significantly to the difference between difficulties. Synth Riders attracts a wide variety of players with a wide variety of physical abilities.  Newer players will want to ease into the game with slow and smooth motions that don't quickly redirect very often. Experienced players quite literally build muscle strength through exercise while playing and will want a more brisk pace of movement with bursts of high speed more exciting: Not everyone will be able to move as fast as you can!
@@ -58,10 +60,10 @@ Walls are great for adding full body movement to a map, but newer players may ha
 
 Wall-art can contribute to VR discomfort and vertigo. Wall art and tunnels should be avoided or used extremely sparingly at lower difficulty levels. As wall art below the play area can be particularly uncomfortable, avoid placing walls below the play area, especially in lower difficulty maps. By Master level, it can be assumed most players have at least some tolerance, but dense wall-art patterns can still cause issues for some players.  Avoid dense wall tunnels in all maps- space the walls out (timing walls to notes/beats can be particularly effective).  
 
-Wall-art far from the play area is more 
+Wall-art far from the play area is less uncomfortable for many players that suffer from VR discomfort but can still contribute to vertigo.
 
 ## Difficulty guidelines
-> This represents best practice for each difficulty, with some tolerance for subjectivity. Official maps released 2024 and later (Electroswing 2, 80s, 90s, Current Waves, etc) are good examples to reference for difficulty. Older official maps were less consistant, and custom maps can be wildly misrepresented in difficulty.
+> This represents best practice for each difficulty, with some tolerance for subjectivity. Official maps released around 2025 and later (90s, Current Waves, Linkin Park, Dua Lipa, Lady Gaga, etc) are the best examples to reference for difficulty. Older official maps were less consistant, and custom maps can be wildly misrepresented in difficulty.
 
 ### Easy
 > _"There is no such thing as too easy for easy!"_
@@ -72,7 +74,6 @@ The defining principal for an Easy map is that it must be playable without any e
 - Patterns should be simple and mostly one-handed, although some symmetrical two handed patterns can work if there is extra space beforehand to read them.
 - Do not use crossed over two handed notes
 - Do not map beyond the yellow comfort circle.
-- Two-handed special may be used, but give a lot of extra space (typically at least two full measures) before starting a two-handed special pattern.
 - Two-handed special may be used, but very sparingly. Give a lot of extra space (typically at least two full measures) before starting a two-handed special.
 - Do not make players suddenly reach to the opposite side of their body. It's best to start patterns off on the natural side of the hand and slowly move around the play space.
 - Keep the player's hands well away from their face, including the likely path their hands will take betweeen notess, we don't want players to risk their hitting their headset.
@@ -137,7 +138,7 @@ The underlying principals for a Hard map assume that the typical player is able 
 Walls, buzzrails, and cosmetic note patterns:
 - Wall art can add significantly to a Hard map, but should not be overwhelming.
 - Minimize the use of wall art close to the the play area as it can cause vertigo and VR sickness, especially long tunnels. Minimize walls beneath the play area.  Most Hard level players have developed tolerance to resist VR sickness or have adjusted their comfort settings, but some players remain susceptible.
-- Use buzzrails and right note stacks sparingly. Keep the buzz on the buzzrails small, and avoid placing notes on buzzrails as they can be hard for players to see. 
+- Use buzzrails and tight note stacks sparingly. Keep the buzz on the buzzrails small, and avoid placing notes on buzzrails as they can be hard for players to see. 
 - Avoid "rule breaking" behaviors like mixing left and right notes with specials and other cosmetic notes. These can confuse and frustrate lower difficulty players.
 
 Limited Mobility: Hard maps are very popular among experienced players with limited mobility, including those playing seated, playing with one arm, or playing with shoulder or elbow shoulder issues.  These players may have Master-level skills but are physically unable to play Master-level maps. Hard maps should strive to satisfy both improving players building muscle memory and experienced players with reduced mobility.
@@ -157,7 +158,7 @@ The underlying principals for an Expert level map assume the player is experienc
 - Avoid placing notes more than slightly outside the red comfort circle. 
     - If the extreme left/right grid spaces are used, it should be in in large slow patterns where the player has time to adjust, or has already moved their core body to that side for other elements and is primed to make that movement. 
 - Expert maps may feature swapping rapidly between hands and patterns.
-- Master maps may feature complex and intense independant two-handed movements.
+- Expert maps may feature complex and intense independant two-handed movements that are more intense than Hard, but less intense than Master.
 - Expert maps may mix two-handed special notes into regular patterns, but use should be limited. 
 - Expert maps may mix one-handed special notes into regular patterns, but should be avoided in fast complex patterens where the Expert level player doesn't have enough time to think and plan.
 - Expert maps should avoid patterns that require movements in the Z axis (forward/backward)
