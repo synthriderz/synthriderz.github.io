@@ -4,7 +4,7 @@ Home of the open-source documentation of all things Synth Riders!
 
 ## Getting Started
 
-- [FAQ](/faq/)
+- [FAQ](/FAQ/)
     - Frequently Asked Questions
 - [Modding Community Discord](https://discord.synthriderz.com)
     - Be sure to join the modding community Discord for support, discussion, and to share your creations!
